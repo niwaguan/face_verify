@@ -1,0 +1,131 @@
+PODS:
+  - AlipayVerifySDK (1.0.0.230217114243):
+    - AliyunIdentityManager
+    - APBToygerFacade
+    - APPSecuritySDK
+    - BioAuthAPI
+    - BioAuthEngine
+    - MPRemoteLogging
+    - OCRDetectSDKForTech
+    - ToygerService
+    - ZolozIdentityManager
+    - ZolozMobileRPC
+    - ZolozOpenPlatformBuild
+    - ZolozSensorServices
+    - ZolozUtility
+  - AliyunIdentityManager (1.0.0.230713143615):
+    - BioAuthEngine
+    - ZolozUtility
+  - AntVerify (1.0.0.230802111230):
+    - AlipayVerifySDK (= 1.0.0.230217114243)
+    - AliyunIdentityManager (= 1.0.0.230713143615)
+    - APBToygerFacade (= 1.2.10.230530161304)
+    - APPSecuritySDK (= 1.0.0.230425140616)
+    - BioAuthAPI (= 1.0.0.210506154224)
+    - BioAuthEngine (= 1.3.1.230425140616)
+    - MPRemoteLogging (= 1.3.1.230425140616)
+    - OCRDetectSDKForTech (= 1.0.0.220316184537)
+    - ToygerService (= 1.3.1.230425140616)
+    - ZolozIdentityManager (= 1.0.0.210205102931)
+    - ZolozMobileRPC (= 1.0.0.220316184537)
+    - ZolozOpenPlatformBuild (= 1.3.1.230804153430)
+    - ZolozSensorServices (= 1.3.1.230425140616)
+    - ZolozUtility (= 1.0.0.221014160516)
+  - APBToygerFacade (1.2.10.230530161304):
+    - BioAuthEngine
+    - ToygerService
+    - ZolozOpenPlatformBuild
+    - ZolozUtility
+  - APPSecuritySDK (1.0.0.230425140616)
+  - BioAuthAPI (1.0.0.210506154224)
+  - BioAuthEngine (1.3.1.230425140616):
+    - BioAuthAPI
+    - ZolozSensorServices
+    - ZolozUtility
+  - face_verify (0.0.1):
+    - AntVerify (= 1.0.0.230802111230)
+    - Flutter
+  - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
+  - MPRemoteLogging (1.3.1.230425140616)
+  - OCRDetectSDKForTech (1.0.0.220316184537):
+    - AliyunIdentityManager
+    - BioAuthEngine
+    - ZolozSensorServices
+  - ToygerService (1.3.1.230425140616):
+    - APPSecuritySDK
+    - ZolozOpenPlatformBuild
+    - ZolozSensorServices
+    - ZolozUtility
+  - ZolozIdentityManager (1.0.0.210205102931):
+    - AliyunIdentityManager
+    - BioAuthEngine
+    - ZolozUtility
+  - ZolozMobileRPC (1.0.0.220316184537)
+  - ZolozOpenPlatformBuild (1.3.1.230804153430):
+    - AliyunIdentityManager
+    - APPSecuritySDK
+    - BioAuthAPI
+    - BioAuthEngine
+    - MPRemoteLogging
+    - ZolozMobileRPC
+    - ZolozSensorServices
+    - ZolozUtility
+  - ZolozSensorServices (1.3.1.230425140616)
+  - ZolozUtility (1.0.0.221014160516)
+
+DEPENDENCIES:
+  - face_verify (from `.symlinks/plugins/face_verify/ios`)
+  - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
+
+SPEC REPOS:
+  https://gitee.com/mpaas/podspecs:
+    - AlipayVerifySDK
+    - AliyunIdentityManager
+    - AntVerify
+    - APBToygerFacade
+    - APPSecuritySDK
+    - BioAuthAPI
+    - BioAuthEngine
+    - MPRemoteLogging
+    - OCRDetectSDKForTech
+    - ToygerService
+    - ZolozIdentityManager
+    - ZolozMobileRPC
+    - ZolozOpenPlatformBuild
+    - ZolozSensorServices
+    - ZolozUtility
+
+EXTERNAL SOURCES:
+  face_verify:
+    :path: ".symlinks/plugins/face_verify/ios"
+  Flutter:
+    :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
+
+SPEC CHECKSUMS:
+  AlipayVerifySDK: 53b9578d01c3f5a415317bc898e6392a8c11baa6
+  AliyunIdentityManager: 33c8568256be0c6d1b160641d1c0457a65ceb978
+  AntVerify: 6f7a1972e687c7f6233aa923e5b8d6ac4a224c5f
+  APBToygerFacade: 85d4dfa35ceaa51de96b7404c33fdea6dcea1269
+  APPSecuritySDK: e87a9118d4e5362497b7248879c680a01bfa8ccf
+  BioAuthAPI: aa311096f8ba9097a6fa257494421aecd950c62c
+  BioAuthEngine: 4079266f0b35ab92d0b188792d85984decce0b6f
+  face_verify: f48f9c79eb9e6aeb00536dbd7fed054aba8e705e
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  integration_test: 13825b8a9334a850581300559b8839134b124670
+  MPRemoteLogging: af20db401e0400caeddd04985dea7a4c2ca5ec1a
+  OCRDetectSDKForTech: ee22bda0c1a27fe45a87d5c726deb1629d4e6f19
+  ToygerService: 63d37bd5ec225deb55792aac00210a78fa0343a7
+  ZolozIdentityManager: 5304fbae2b5f7a8ead916f1a04fcebc6dba9be3b
+  ZolozMobileRPC: 33c338b4cad9b0d552faf7d4d55682e1194c27ea
+  ZolozOpenPlatformBuild: b7e95c47e395c3c85abc0886e4c28b60b8eeb5d2
+  ZolozSensorServices: 4579437d96b4084fbec253a6e79e2b811f9dea17
+  ZolozUtility: 88c30984b250dcb5557745fb86313b793f9b5d85
+
+PODFILE CHECKSUM: 070a544e2aa7c64fc99eb487ed97c2b49d37fa8a
+
+COCOAPODS: 1.15.2
