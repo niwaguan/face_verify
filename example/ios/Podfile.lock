@@ -46,13 +46,28 @@ PODS:
     - AntVerify (= 1.0.0.230802111230)
     - Flutter
   - Flutter (1.0.0)
+  - flutter_ali_auth (0.0.1):
+    - Flutter
+    - MBProgressHUD
+    - MJExtension
+    - SDWebImage
   - integration_test (0.0.1):
     - Flutter
+  - MBProgressHUD (1.2.0)
+  - MJExtension (3.4.1)
   - MPRemoteLogging (1.3.1.230425140616)
   - OCRDetectSDKForTech (1.0.0.220316184537):
     - AliyunIdentityManager
     - BioAuthEngine
     - ZolozSensorServices
+  - SDWebImage (5.18.7):
+    - SDWebImage/Core (= 5.18.7)
+  - SDWebImage/Core (5.18.7)
+  - tobias (0.0.1):
+    - Flutter
+    - tobias/normal (= 0.0.1)
+  - tobias/normal (0.0.1):
+    - Flutter
   - ToygerService (1.3.1.230425140616):
     - APPSecuritySDK
     - ZolozOpenPlatformBuild
@@ -78,7 +93,9 @@ PODS:
 DEPENDENCIES:
   - face_verify (from `.symlinks/plugins/face_verify/ios`)
   - Flutter (from `Flutter`)
+  - flutter_ali_auth (from `.symlinks/plugins/flutter_ali_auth/ios`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
+  - tobias (from `.symlinks/plugins/tobias/ios`)
 
 SPEC REPOS:
   https://gitee.com/mpaas/podspecs:
@@ -97,14 +114,22 @@ SPEC REPOS:
     - ZolozOpenPlatformBuild
     - ZolozSensorServices
     - ZolozUtility
+  trunk:
+    - MBProgressHUD
+    - MJExtension
+    - SDWebImage
 
 EXTERNAL SOURCES:
   face_verify:
     :path: ".symlinks/plugins/face_verify/ios"
   Flutter:
     :path: Flutter
+  flutter_ali_auth:
+    :path: ".symlinks/plugins/flutter_ali_auth/ios"
   integration_test:
     :path: ".symlinks/plugins/integration_test/ios"
+  tobias:
+    :path: ".symlinks/plugins/tobias/ios"
 
 SPEC CHECKSUMS:
   AlipayVerifySDK: 53b9578d01c3f5a415317bc898e6392a8c11baa6
@@ -116,9 +141,14 @@ SPEC CHECKSUMS:
   BioAuthEngine: 4079266f0b35ab92d0b188792d85984decce0b6f
   face_verify: f48f9c79eb9e6aeb00536dbd7fed054aba8e705e
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_ali_auth: 7e96ab274f6144e20788046795d739a6007de55b
   integration_test: 13825b8a9334a850581300559b8839134b124670
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   MPRemoteLogging: af20db401e0400caeddd04985dea7a4c2ca5ec1a
   OCRDetectSDKForTech: ee22bda0c1a27fe45a87d5c726deb1629d4e6f19
+  SDWebImage: f9258c58221ed854cfa0e2b80ee4033710b1c6d3
+  tobias: 22f69183b14af82a2ac8ff698af084c352744e5f
   ToygerService: 63d37bd5ec225deb55792aac00210a78fa0343a7
   ZolozIdentityManager: 5304fbae2b5f7a8ead916f1a04fcebc6dba9be3b
   ZolozMobileRPC: 33c338b4cad9b0d552faf7d4d55682e1194c27ea
@@ -126,6 +156,6 @@ SPEC CHECKSUMS:
   ZolozSensorServices: 4579437d96b4084fbec253a6e79e2b811f9dea17
   ZolozUtility: 88c30984b250dcb5557745fb86313b793f9b5d85
 
-PODFILE CHECKSUM: 070a544e2aa7c64fc99eb487ed97c2b49d37fa8a
+PODFILE CHECKSUM: ce4e261cd4e65023ce5d3b0aaddbbb298eb20cd5
 
 COCOAPODS: 1.15.2

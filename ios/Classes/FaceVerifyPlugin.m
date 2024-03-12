@@ -15,13 +15,13 @@
 
 @implementation FaceVerifyPluginApi
 
-
-
-- (void)initServiceWithError:(FlutterError * _Nullable __autoreleasing * _Nonnull)error { 
+- (void)initServiceWithCompletion:(nonnull void (^)(FlutterError * _Nullable))completion {
   [MPVerifySDKService initSDKService];
+  completion(NULL);
 }
 
-- (void)verifyCertifyId:(nonnull NSString *)certifyId completion:(nonnull void (^)(NSDictionary * _Nullable, FlutterError * _Nullable))completion {
+- (void)verifyCertifyId:(nonnull NSString *)certifyId completion:(nonnull void (^)(NSDictionary<NSString *,id> * _Nullable, FlutterError * _Nullable))completion { 
+  
   UIViewController *vc = [self getViewController];
   if (vc == NULL) {
     completion(NULL, [FlutterError errorWithCode:@"-1" message:@"无法获取ViewController" details:NULL]);
@@ -29,9 +29,28 @@
   }
   
   [[MPVerifySDKService sharedInstance] verifyWith:certifyId currentCtr:vc extParams:@{} onCompletion:^(ZIMResponse *response) {
-      NSString *result = [NSString stringWithFormat:@"结果：code: %@, reason: %@, retCodeSub = %lu, retMessageSub = %@", @(response.code), response.reason, (unsigned long)response.retCode, response.retMessageSub];
+    NSMutableDictionary *result = [@{
+      @"code": @(response.code),
+      @"retCode": @(response.retCode),
+    } mutableCopy];
+    NSString *value = response.reason;
+    if (value != NULL) {
+      result[@"reason"] = value;
+    }
+    value = response.retCodeSub;
+    if (value != NULL) {
+      result[@"retCodeSub"] = value;
+    }
+    value = response.retMessageSub;
+    if (value != NULL) {
+      result[@"retMessageSub"] = value;
+    }
+    
+    completion(result, NULL);
   }];
 }
+
+
 
 - (UIViewController *)getViewController {
   if (@available(iOS 15.0, *)) {

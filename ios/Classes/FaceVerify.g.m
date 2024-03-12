@@ -42,11 +42,11 @@ void SetUpSYFlutterFaceVerifyHostApi(id<FlutterBinaryMessenger> binaryMessenger,
         binaryMessenger:binaryMessenger
         codec:SYFlutterFaceVerifyHostApiGetCodec()];
     if (api) {
-      NSCAssert([api respondsToSelector:@selector(initServiceWithError:)], @"SYFlutterFaceVerifyHostApi api (%@) doesn't respond to @selector(initServiceWithError:)", api);
+      NSCAssert([api respondsToSelector:@selector(initServiceWithCompletion:)], @"SYFlutterFaceVerifyHostApi api (%@) doesn't respond to @selector(initServiceWithCompletion:)", api);
       [channel setMessageHandler:^(id _Nullable message, FlutterReply callback) {
-        FlutterError *error;
-        [api initServiceWithError:&error];
-        callback(wrapResult(nil, error));
+        [api initServiceWithCompletion:^(FlutterError *_Nullable error) {
+          callback(wrapResult(nil, error));
+        }];
       }];
     } else {
       [channel setMessageHandler:nil];
@@ -64,7 +64,7 @@ void SetUpSYFlutterFaceVerifyHostApi(id<FlutterBinaryMessenger> binaryMessenger,
       [channel setMessageHandler:^(id _Nullable message, FlutterReply callback) {
         NSArray *args = message;
         NSString *arg_certifyId = GetNullableObjectAtIndex(args, 0);
-        [api verifyCertifyId:arg_certifyId completion:^(NSDictionary *_Nullable output, FlutterError *_Nullable error) {
+        [api verifyCertifyId:arg_certifyId completion:^(NSDictionary<NSString *, id> *_Nullable output, FlutterError *_Nullable error) {
           callback(wrapResult(output, error));
         }];
       }];

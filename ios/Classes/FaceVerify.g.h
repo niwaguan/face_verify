@@ -16,9 +16,9 @@ NSObject<FlutterMessageCodec> *SYFlutterFaceVerifyHostApiGetCodec(void);
 
 @protocol SYFlutterFaceVerifyHostApi
 /// 初始化SDK
-- (void)initServiceWithError:(FlutterError *_Nullable *_Nonnull)error;
+- (void)initServiceWithCompletion:(void (^)(FlutterError *_Nullable))completion;
 /// 开始验证
-- (void)verifyCertifyId:(NSString *)certifyId completion:(void (^)(NSDictionary *_Nullable, FlutterError *_Nullable))completion;
+- (void)verifyCertifyId:(NSString *)certifyId completion:(void (^)(NSDictionary<NSString *, id> *_Nullable, FlutterError *_Nullable))completion;
 @end
 
 extern void SetUpSYFlutterFaceVerifyHostApi(id<FlutterBinaryMessenger> binaryMessenger, NSObject<SYFlutterFaceVerifyHostApi> *_Nullable api);

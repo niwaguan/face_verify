@@ -49,7 +49,7 @@ class FlutterFaceVerifyHostApi {
   }
 
   /// 开始验证
-  Future<Map<Object?, Object?>> verify({required String certifyId}) async {
+  Future<Map<String?, Object?>> verify({required String certifyId}) async {
     const String __pigeon_channelName = 'dev.flutter.pigeon.cn.stormyang.flutter.face_verify.FlutterFaceVerifyHostApi.verify';
     final BasicMessageChannel<Object?> __pigeon_channel = BasicMessageChannel<Object?>(
       __pigeon_channelName,
@@ -72,7 +72,7 @@ class FlutterFaceVerifyHostApi {
         message: 'Host platform returned null value for non-null return value.',
       );
     } else {
-      return (__pigeon_replyList[0] as Map<Object?, Object?>?)!;
+      return (__pigeon_replyList[0] as Map<Object?, Object?>?)!.cast<String?, Object?>();
     }
   }
 }

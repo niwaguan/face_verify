@@ -16,6 +16,11 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+
+        maven {
+            url "https://mvn.cloud.alipay.com/nexus/content/repositories/open/"
+        }
+
     }
 }
 
@@ -40,6 +45,7 @@ android {
     dependencies {
         testImplementation 'junit:junit:4.13.2'
         testImplementation 'org.mockito:mockito-core:5.0.0'
+        implementation "com.mpaas.android:face-verify:3.5.4"
     }
 
     testOptions {

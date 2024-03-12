@@ -1,7 +1,3 @@
 library face_verify;
 
-class FaceVerify {
-  Future<String?> getPlatformVersion() async {
-    return "";
-  }
-}
+export 'src/face_verify.dart';

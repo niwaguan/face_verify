@@ -1,38 +1,58 @@
 package cn.stormyang.flutter.face_verify.face_verify;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
+import com.alipay.mobile.android.verify.sdk.MPVerifyService;
+
+import cn.stormyang.flutter.face_verify.face_verify.FaceVerifyGen.FlutterFaceVerifyHostApi;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.MethodChannel;
-import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
-import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 
 /** FaceVerifyPlugin */
-public class FaceVerifyPlugin implements FlutterPlugin, MethodCallHandler {
-  /// The MethodChannel that will the communication between Flutter and native Android
-  ///
-  /// This local reference serves to register the plugin with the Flutter Engine and unregister it
-  /// when the Flutter Engine is detached from the Activity
-  private MethodChannel channel;
+public class FaceVerifyPlugin implements FlutterPlugin, ActivityAware {
+
+  @Nullable
+  private FaceVerifyApi faceVerifyApi;
 
   @Override
-  public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "face_verify");
-    channel.setMethodCallHandler(this);
-  }
-
-  @Override
-  public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-    if (call.method.equals("getPlatformVersion")) {
-      result.success("Android " + android.os.Build.VERSION.RELEASE);
-    } else {
-      result.notImplemented();
-    }
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    faceVerifyApi = new FaceVerifyApi(binding);
+    FlutterFaceVerifyHostApi.setUp(binding.getBinaryMessenger(), faceVerifyApi);
   }
 
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
-    channel.setMethodCallHandler(null);
+    faceVerifyApi = null;
+    FlutterFaceVerifyHostApi.setUp(binding.getBinaryMessenger(), null);
+  }
+
+  @Override
+  public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+    if (faceVerifyApi != null) {
+      faceVerifyApi.setActivity(binding.getActivity());
+    }
+  }
+
+  @Override
+  public void onDetachedFromActivityForConfigChanges() {
+    if (faceVerifyApi != null) {
+      faceVerifyApi.setActivity(null);
+    }
+  }
+
+  @Override
+  public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+    if (faceVerifyApi != null) {
+      faceVerifyApi.setActivity(binding.getActivity());
+    }
+  }
+
+  @Override
+  public void onDetachedFromActivity() {
+    if (faceVerifyApi != null) {
+      faceVerifyApi.setActivity(null);
+    }
   }
 }

@@ -25,9 +25,12 @@ dependencies:
     # the parent directory to use the current plugin's version.
     path: ../
 
+  tobias: ^3.3.1
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_ali_auth: ^0.7.0
 
 dev_dependencies:
   integration_test:
@@ -83,3 +86,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+tobias:
+  url_scheme: verifyalipay
