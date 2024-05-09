@@ -16,7 +16,7 @@ A Flutter Plugin.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'AntVerify', '1.0.0.230802111230'
+  s.dependency 'AntVerify', '1.0.0.240314103615'
   s.platform = :ios, '12.0'
 
   s.xcconfig = {
